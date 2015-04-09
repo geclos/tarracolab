@@ -1,0 +1,235 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.less styles.
+
+******************************************************************/
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav {}
+
+	/* .menu is clearfixed inside mixins.scss */
+	.menu {
+		ul {
+			li {
+				a {
+					
+					/*
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/
+					&:hover, &:focus {
+					
+					}
+				}
+				
+				&:first-child {}
+				&:last-child {}
+				
+				/*
+				plan your menus and drop-downs wisely.
+				*/
+				ul.sub-menu,
+				ul.children {
+					li {
+						a {
+							&:hover,
+							&:focus {}
+							&:link {}
+						}
+						&:first-child {}
+						&:last-child {}
+					}
+				}
+			} /* end .menu ul li */
+			
+			/* highlight current page */
+			li.current-menu-item, 
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {}
+			}  /* end current highlighters */
+		} /* end .menu ul */
+	} /* end .menu */
+
+/*********************
+FEATURED STYLES
+*********************/
+
+#slideshow {
+  display: block !important;
+  margin-top: 0;
+  
+  .flexslider {
+
+    .flex-caption {
+      background-color: rgba(0,0,0,0.2);
+      
+      a {
+        color: white;
+        text-decoration: none;
+        
+        &:hover {
+          color: white;
+          text-decoration: underline; 
+        }
+      }
+    }
+  }
+}
+
+/*********************
+HEADER SYTLES
+*********************/
+
+.header {
+  position: relative;
+  padding-top: 10px;
+  
+  .current {
+    box-shadow: none !important;
+    .border-radius-custom(3px,3px,0,0);
+    /*Background gradient*/
+      background: rgb(230,231,232); /* Old browsers */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZTdlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iI2ZlZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+      background: -moz-linear-gradient(top,  rgba(230,231,232,1) 0%, rgba(254,255,255,1) 70%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,231,232,1)), color-stop(70%,rgba(254,255,255,1))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(230,231,232,1) 0%,rgba(254,255,255,1) 70%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(230,231,232,1) 0%,rgba(254,255,255,1) 70%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(230,231,232,1) 0%,rgba(254,255,255,1) 70%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(230,231,232,1) 0%,rgba(254,255,255,1) 70%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e7e8', endColorstr='#feffff',GradientType=0 ); /* IE6-8 */
+      /*END of Background gradient*/
+      border: 1px solid @header-border !important;
+      border-bottom: none !important;
+      display: block;
+    
+    .active {
+      text-shadow: none;
+      color: @black;
+      pointer-events: none;
+      cursor: default;
+
+      &:hover {
+        color: @tarracolab-orange;
+        text-decoration: none;
+      }
+    }
+    
+    ul.children {
+      top: 100%;
+    }
+  }
+    
+  #logo-small-screen {
+    display:none;
+  } 
+   
+  #logo {
+    display: block;
+    max-width: 20%;
+  }
+  
+  .logo-caption {
+    display: block;
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  
+  nav {
+    
+    float: left;
+    min-width: 565px;
+    position: relative;
+    padding-left: 10px;
+    
+    .nav {
+      ul {
+        li {
+                          
+          a {
+             border-bottom: none;
+             background: transparent;
+             color: @nav-link-color;
+             text-shadow: 1px 1px 0 @dark-blue;
+          }
+          
+           &:nth-child(4) {
+           }
+                        
+           &:nth-child(2), li:nth-child(3) {
+           }
+          
+          &:first-child {}
+
+          &:last-child {
+            box-shadow: none;
+            border: none;
+          }
+        }
+      }
+    }
+  } 
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/* entry content */
+.entry-content {
+  
+  img {
+    display: none;
+  }
+			
+	
+	/* at this larger size, we can start to align images */
+	.alignleft, img.alignleft { 
+		margin-right: 1.5em; 
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1.5em; 
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		margin-right: auto; 
+		margin-left: auto; 
+		display: block; 
+		clear: both; 
+	}
+			
+} /* end .entry-content */
+
+/*********************
+FOOTER STYLES
+*********************/
+	
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+.footer-links {
+	ul {
+		li {}
+	}
+} /* end .footer-links */
+			
